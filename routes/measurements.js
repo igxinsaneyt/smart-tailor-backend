@@ -23,7 +23,7 @@ router.get('/:customerId', auth, async (req, res) => {
 // Create or update measurements for a customer
 router.post('/', auth, async (req, res) => {
   try {
-    const { customer, garmentType, dimensions, customNotes } = req.body;
+    const { customer, garmentType, customNotes, ...dimensions } = req.body;
     
     // Verify customer belongs to user
     const customerExists = await Customer.findOne({ _id: customer, user: req.user.id });

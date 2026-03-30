@@ -4,8 +4,7 @@ const MeasurementSchema = new mongoose.Schema({
   customer: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: true },
   garmentType: { 
     type: String, 
-    required: true, 
-    enum: ['Shirt', 'Pant', 'Blouse', 'Kurta', 'Suit', 'Other'] 
+    required: true
   },
   dimensions: {
     type: Map,
